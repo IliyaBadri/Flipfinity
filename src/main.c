@@ -82,7 +82,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     /* ...and also fill a bunch of rectangles at once... */
     for (i = 0; i < SDL_arraysize(rects); i++) {
-        const float w = (float) ((float)WINDOW_WIDTH / SDL_arraysize(rects));
+        const float w = (float) ((float)WINDOW_WIDTH / (float)SDL_arraysize(rects));
         const float h = i * 8.0f;
         rects[i].x = i * w;
         rects[i].y = WINDOW_HEIGHT - h;

@@ -1,3 +1,7 @@
+# C
+
+ x->y is the short hand for (*x).y
+
 # SDL3
 
 ## Coordinates

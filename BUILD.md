@@ -20,12 +20,12 @@ Before you start, make sure you have the following software installed:
 		then click **OK**.
 	- Then in the user variables section look for the `Path` variable and double click on it.
 	- At end of the list that has poped up paste the path to the **directory** that your `ninja.exe` binary is in, and then press **OK**. For me that will be `C:\opt\ninja\`.
-		
-5.  **SDL3**: Go to https://github.com/libsdl-org/SDL/releases and download the latest stable development library with the tag `SDL3-devel-x.y.z-mingw.zip` .
-
-### Installing Dependencies
-
-Make sure the SDL3 include directory is added to your project's build configuration, and the library files are linked correctly.
+4. **Windows SDK**:
+	Go to https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/ and download and install the latest Windows SDK.
+5. **MSVC toolchain**:
+	-   Open the Visual Studio Installer ( Install [Visual Studio](https://visualstudio.microsoft.com/) if you dont already have it installed ).
+	-   Install the **Desktop development with C++** workload, which includes MSVC and the necessary libraries.
+7.  **SDL3**: Go to https://github.com/libsdl-org/SDL/releases and download the latest stable development library with the tag `SDL3-devel-x.y.z-mingw.zip` .
 
 ## Cloning the Project
 
@@ -49,7 +49,7 @@ git clone https://github.com/IliyaBadri/Flipfinity
 	```sh
 	mkdir build
 	```
-4. Extract the `SDL3-devel-x.y.z-mingw.zip` archive you downloaded earlier and navigate to `SDL3-devel-x.y.z-mingw.zip\SDL3-x.x.x\x86_64-w64-mingw32\`. There you should see 4 directories named `bin`, `include`, `lib`, `share`. Copy all those directories into `<path_to_the_project>\Flipfinity\SDL3` directory you have just created earlier.
+4. Extract the `SDL3-devel-x.y.z-mingw.zip` archive you downloaded earlier and navigate to `SDL3-devel-x.y.z-mingw.zip\SDL3-x.x.x\x86_64-w64-mingw32\`. There you should see 4 directories named `bin`, `include`, `lib`, `share`. Copy all those directories into `<path_to_the_project>\Flipfinity\SDL3\` directory you have just created earlier.
 
 
 ## Building Flipfinity
@@ -65,7 +65,7 @@ git clone https://github.com/IliyaBadri/Flipfinity
 2. Then, use CMake to configure the build system. This will generate the necessary files for Ninja and Clang:
 
 	```sh
-	cmake .. -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+	cmake .. -G Ninja
 	```
 
 ### 2. Build the Project
@@ -103,3 +103,4 @@ Flipfinity is licensed under the MIT License. See the LICENSE file for details.
 ----------
 
 If you encounter any issues or have any questions, feel free to reach out or open an issue in the GitHub repository!
+

@@ -1,6 +1,6 @@
 #pragma once
 #include "Object.h"
-#include "../Math/Vector2.h"
+#include "../Data/Vector2.h"
 
 struct Transform {
     struct Object* parent;

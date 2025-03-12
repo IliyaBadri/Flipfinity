@@ -1,8 +1,9 @@
 #pragma once
 #include "Object.h"
-#include "../Math/Color.h"
+#include "../Data/Color.h"
+#include <stdint.h>
 
 struct ColorRectangle {
     struct Object* parent;
-    struct Color color;
+    struct RGBA color;
 };

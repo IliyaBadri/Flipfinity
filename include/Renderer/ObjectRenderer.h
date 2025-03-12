@@ -1,5 +1,5 @@
 #pragma once
-#include "../Objects/Object.h"
+#include "../Objects/SceneColorBackground.h"
 #include <SDL3/SDL.h>
 #include <string.h>
 
@@ -12,5 +12,4 @@ void RenderObject(SDL_Renderer* renderer, struct Object* object){
         SDL_RenderClear(renderer); 
         return;
     }
-
 }

@@ -1,4 +1,10 @@
-# How to build Flipfinity from source?
+# How to build Flipfinity from source on linux?
+
+## Prerequisites
+	```sh
+	sudo apt install libsdl3-dev cmake ninja-build clang
+	```
+
 
 This guide will walk you through the process of setting up and building Flipfinity from the ground up on your **Windows machine**. Flipfinity is a C project that uses SDL3 and can be built with CMake, LLVM/Clang, and Ninja.
 

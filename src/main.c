@@ -100,3 +100,5 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
 
 }
+
+void RenderMainMenu(SDL_Renderer *renderer);

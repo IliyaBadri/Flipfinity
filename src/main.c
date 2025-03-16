@@ -3,6 +3,7 @@
 #include <SDL3/SDL_main.h>
 #include "MainMenu.h"
 
+// App info
 const static char* appName = "Flipfinity";
 const static char* appVersion = "1.0.0";
 const static char* appIdentitifier = "ir.iliyabadri.flipfinity";

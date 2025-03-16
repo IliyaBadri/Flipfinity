@@ -12,6 +12,7 @@ const static char* appIdentitifier = "ir.iliyabadri.flipfinity";
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
 
+// Static window size
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
 

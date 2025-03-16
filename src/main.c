@@ -1,12 +1,18 @@
 #define SDL_MAIN_USE_CALLBACKS 1  // Using SDL callbacks instead of main.
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include "MainMenu.h"
+#include "flipfinity.h"
+
+// flipfinity header file instantiations
+void flipfinity_setup();
+void flipfinity_update(SDL_Renderer *renderer);
 
 // App info
-const static char* appName = "Flipfinity";
-const static char* appVersion = "1.0.0";
-const static char* appIdentitifier = "ir.iliyabadri.flipfinity";
+const static char* app_name = "Flipfinity";
+const static char* app_version = "1.0.0";
+const static char* app_identitifier = "ir.iliyabadri.flipfinity";
+const static char* app_title = "Flipfinity v1.0.0";
+
 
 // We use this renderer to draw into this window every frame.
 static SDL_Window *window = NULL;
@@ -19,17 +25,19 @@ static SDL_Renderer *renderer = NULL;
 // SDL global initialization callback.
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-    SDL_SetAppMetadata(appName, appVersion, appIdentitifier);
+    SDL_SetAppMetadata(app_name, app_version, app_identitifier);
 
     if (!SDL_Init(SDL_INIT_VIDEO)) {
         SDL_Log("Couldn't initialize SDL: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
 
-    if (!SDL_CreateWindowAndRenderer(appName, WINDOW_WIDTH, WINDOW_HEIGHT, 0, &window, &renderer)) {
+    if (!SDL_CreateWindowAndRenderer(app_title, WINDOW_WIDTH, WINDOW_HEIGHT, 0, &window, &renderer)) {
         SDL_Log("Couldn't create window/renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
+
+    flipfinity_setup();
 
     return SDL_APP_CONTINUE;
 }
@@ -46,7 +54,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 // SDL global update callback. (Runs every frame)
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    RenderMainMenu(renderer);
+    flipfinity_update(renderer);
     // SDL_FRect rects[16];
     // const Uint64 now = SDL_GetTicks();
     // int i;
@@ -102,5 +110,3 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
 
 }
-
-void RenderMainMenu(SDL_Renderer *renderer);

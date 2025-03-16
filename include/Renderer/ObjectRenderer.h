@@ -2,6 +2,7 @@
 #include "../Objects/SceneColorBackground.h"
 #include <SDL3/SDL.h>
 #include <string.h>
+#include <stdio.h>
 
 void RenderObject(SDL_Renderer* renderer, struct Object* object){
     if(renderer == NULL){

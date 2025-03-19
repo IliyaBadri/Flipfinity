@@ -1,8 +1,10 @@
-# pragma once
-#include "../renderer/renderer.h"
-#include <SDL3/SDL.h>
-#include <string.h>
+#include "mainmenu.h"
+
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "object.h"
+#include "renderer.h"
 
 void mainmenu_update(SDL_Renderer *renderer){
     if(renderer == NULL){

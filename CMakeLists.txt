@@ -19,7 +19,8 @@ if(NOT CMAKE_CXX_COMPILER)
 endif()
 
 # Source files
-add_executable(Flipfinity src/main.c)
+file(GLOB SOURCES "src/*.c")
+add_executable(Flipfinity ${SOURCES})
 
 # Source include directory
 target_include_directories(Flipfinity PRIVATE ${CMAKE_SOURCE_DIR}/include)

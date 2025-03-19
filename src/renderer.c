@@ -1,8 +1,7 @@
-#pragma once
-#include "../objects/object.h"
-#include <SDL3/SDL.h>
-#include <string.h>
+#include "renderer.h"
+
 #include <stdio.h>
+#include <stdlib.h>
 
 void renderer_render_object(SDL_Renderer* renderer, Object* object){
     if(renderer == NULL){
